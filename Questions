@@ -1,4 +1,4 @@
-A PIE
+OOPS -   A PIE
 Abstraction
 Polymorphism
 Inheritance
@@ -6,7 +6,7 @@ Encapsulation
 
 Difference between == and equals() method 
 
- difference between equals() and hashCode()
+Difference between equals() and hashCode()
 
 
 class loader is responsible to load that class file from file system,network or any other location. This class loader is nothing but also a class from which location they are loading the class according to that class loaders are three types :
@@ -16,35 +16,49 @@ class loader is responsible to load that class file from file system,network or 
 3.System class loader 
 [http://javarevisited.blogspot.sg/2012/12/how-classloader-works-in-java.html]
 
+String
 
 String vs StringBuffer, 
+-String object is immutable
+-StringBuffer/StringBuilder objects are mutable
 
 Comparator and Comparable in Java
 
-Threads, Strings, 
+
+
+SimpleDateFormat is used to convert Dates to String and vice-versa.
+  SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/DD HH:mm:ss");
+  Date curdate= new Date();
+  System.out.println(sdf.format(curdate));
 
 
 Collections 
 - iterable interface present in java.lang package not in java.util package 
 
-Set(no duplicates) ::  Queue   :: List       ::  Map
+    Set(no duplicates) ::  Queue   :: List(inseration order)     ::   Map(key value pair)
 
-import java.util.Hashtable;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
+                      add()                                               put()
+    HashSet                           ArrayList                       HashMap  
+    TreeSet                           Linked List                     TreeMap
+                                      Vector                          Hashtable
 
-Iterator<Entry<Integer, String>> i= stockSet.iterator();
-System.out.println("Iterating over Hashtable in Java");
 
-//Iterator begins
-while(i.hasNext()){
-  Map.Entry<Integer,String> m=i.next();
-  int key = m.getKey();
-  String value=m.getValue();
-  System.out.println("Key :"+key+"  value :"+value);
-}
+  import java.util.Hashtable;
+  import java.util.Iterator;
+  import java.util.Map;
+  import java.util.Map.Entry;
+  import java.util.Set;
+  
+  Iterator<Entry<Integer, String>> i= stockSet.iterator();
+  System.out.println("Iterating over Hashtable in Java");
+  
+  //Iterator begins
+  while(i.hasNext()){
+    Map.Entry<Integer,String> m=i.next();
+    int key = m.getKey();
+    String value=m.getValue();
+    System.out.println("Key :"+key+"  value :"+value);
+  }
 
 
 
@@ -54,10 +68,42 @@ ArrayList and HashSet
 
 
 ArrayList vs LinkedList
+- ArrayList is backed by Array while LinkedList is backed by LinkedList
+- ArrayList is better choice than LinkedList in almost all cases, except when you do a frequent add() operation than remove() or get().
+
 
 ArrayList vs Vector
 
 HashMap vs Hashtable
+
+To use any object as key in HashMap , it needs to implement equals() and hashCode() method .
+
+
+Threads
+
+
+
+
+
+
+Streams
+  byte stream :  For reading and writing binary data
+
+
+  Character streams : work with the characters 
+
+Design Pattern
+
+Double checked locking in Singleton
+private DCL dcl = null; 
+ public DCL getDCL() {
+      if (dcl == null) {    #insted of creating an object directly we double check to create an instance
+      synchronized { 
+         if (dcl == null) 
+            dcl = new DCL(); 
+       } 
+     } 
+
 
 
 
