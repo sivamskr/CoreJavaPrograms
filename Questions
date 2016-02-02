@@ -29,6 +29,25 @@ Collections
 
 Set(no duplicates) ::  Queue   :: List       ::  Map
 
+import java.util.Hashtable;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+Iterator<Entry<Integer, String>> i= stockSet.iterator();
+System.out.println("Iterating over Hashtable in Java");
+
+//Iterator begins
+while(i.hasNext()){
+  Map.Entry<Integer,String> m=i.next();
+  int key = m.getKey();
+  String value=m.getValue();
+  System.out.println("Key :"+key+"  value :"+value);
+}
+
+
+
 ArrayList and HashSet 
 - index based  use get(index) and remove(index)
 - object based. HashSet also doesn't provide get() method
@@ -39,6 +58,7 @@ ArrayList vs LinkedList
 ArrayList vs Vector
 
 HashMap vs Hashtable
+
 
 
 
