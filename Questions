@@ -27,14 +27,18 @@ Threads, Strings,
 Collections 
 - iterable interface present in java.lang package not in java.util package 
 
-Set ::  Queue   :: List       ::  
+Set(no duplicates) ::  Queue   :: List       ::  Map
 
 ArrayList and HashSet 
+- index based  use get(index) and remove(index)
+- object based. HashSet also doesn't provide get() method
+
 
 ArrayList vs LinkedList
 
 ArrayList vs Vector
 
 HashMap vs Hashtable
+
 
 
