@@ -1,28 +1,58 @@
+> What is class loader and how to use this?
+ class loader is responsible to load that class file from file system,network or any other location. This class loader is nothing but  also a class from which location they are loading the class according to that class loaders are three types :
+
+ 1.Bootstrap  
+ 2.Extension  
+ 3.System class loader 
+ [http://javarevisited.blogspot.sg/2012/12/how-classloader-works-in-java.html]
+
 OOPS -   A PIE
-Abstraction
-Polymorphism
-Inheritance
-Encapsulation
+------------------  
+> Abstraction   :  defining an idea in terms of classes or interface                  ; abstract  -  interface
+> Polymorphism  :  function in multiple forms                                         ; Overwriting - Overloading
+> Inheritance   :  inherit properties from its parent class                           ; extend - implement
+> Encapsulation :  combining  methods n attribute into a class(hide how things work)  ; public - default - protected -private
 
-Difference between == and equals() method 
+> Difference between == and equals() method ?
+  == is used to compare both primitive and objects while equals() is only used for objects comparison.
+  "==" compare two objects based on memory reference
+  Default implementation of equals provided in Object class is similar to "==" equality operator and return true if you are comparing   two references of same object. 
+  
+> Difference between == and equals() method in String ? 
+  Since java.lang.String class override equals method, It return true if two String object contains same content but == will only       return true if two references are pointing to same object.
+  
+  String personalLoan = new String("== and equals");
+  String homeLoan = new String("== and equals");
+       
+  //since two strings are different object result should be false
+  personalLoan == homeLoan;        # False
 
-Difference between equals() and hashCode()
+  //since strings contains same content , equals() should return true
+  personalLoan.equals(homeLoan);   #True
 
+> Difference between equals() and hashCode() ?
+  To put entry in HashMap, first hashcode is calculated and this hashcode used to find bucket(index) where this entry will get stored   in hashMap.
+  
+  
+> Difference between "Transient and "Volatile" ?
+  transient keyword is used during serialization of Java object   :exclude them from serialization process
+  volatile is related to visibility of variables modified by multiple thread during concurrent programming. 
 
-class loader is responsible to load that class file from file system,network or any other location. This class loader is nothing but also a class from which location they are loading the class according to that class loaders are three types :
+> String
 
-1.Bootstrap  
-2.Extension  
-3.System class loader 
-[http://javarevisited.blogspot.sg/2012/12/how-classloader-works-in-java.html]
-
-String
-
-String vs StringBuffer, 
--String object is immutable
--StringBuffer/StringBuilder objects are mutable
-
-Comparator and Comparable in Java
+ -String vs StringBuffer, 
+ -String object is immutable
+ -StringBuffer/StringBuilder objects are mutable.
+ 
+> Difference between String literal and String object
+  String literal checks if the variable is already there in string pool, If it exists, it points to the same liters
+  new() operator always creates a new String object.
+  String a = "Java"; 
+  String b = "Java"; 
+  System.out.println(a == b); // True
+  I think up-to Java 1.6 String pool is located in permgen area of heap, but in Java 1.7 updates its moved to main heap area.
+  
+> Comparator and Comparable in Java
 
 
 
@@ -79,9 +109,15 @@ HashMap vs Hashtable
 To use any object as key in HashMap , it needs to implement equals() and hashCode() method .
 
 
-Threads
+Threads  : 
 
 
+
+
+Serialization : 
+
+> Difference between Serializable and Externalizable in Java Serialization
+  In case of Serializable, default serialization process is used. while in case of Externalizable custom Serialization process is used   which is implemented using readExternel() and writeExternal() 
 
 
 
