@@ -37,6 +37,21 @@ OOPS -   A PIE
 > Difference between "Transient and "Volatile" ?
   transient keyword is used during serialization of Java object   :exclude them from serialization process
   volatile is related to visibility of variables modified by multiple thread during concurrent programming. 
+  
+  
+> Difference between java.util.Date and java.sql.Date in Java 
+  java.sql.Date just represent DATE without time information 
+  java.util.Date represent both Date and Time information. 
+  
+  Convert from a java.util.Date Object to a java.sql.Date Object
+  java.sql.Date sqlDate = new java.sql.Date(new java.util.Date().getTime());
+  
+  SimpleDateFormat is used to convert Dates to String and vice-versa.
+  SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/DD HH:mm:ss");
+  Date curdate= new Date();
+  System.out.println(sdf.format(curdate));
+
+
 
 > String
 
@@ -52,27 +67,57 @@ OOPS -   A PIE
   System.out.println(a == b); // True
   I think up-to Java 1.6 String pool is located in permgen area of heap, but in Java 1.7 updates its moved to main heap area.
   
-> Comparator and Comparable in Java
+> Difference between Comparable(java.lang) and Comparator(java.util)  in Java
+  Comparable in Java is used to implement natural ordering of object. 
+   
+  POJO implements Comparable<POJO> {
+     @Override
+     public int compareTo(POJO obj1) {
+     return this.val < obj1.val
+  }
+  
+  CustomComparator implements Comparator<POJO>{
+    < is -1
+     @Override
+     public int compare(POJO obj1, POJO Obj2) {
+     return obj1.val < obj2.val
 
-
-
-SimpleDateFormat is used to convert Dates to String and vice-versa.
-  SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/DD HH:mm:ss");
-  Date curdate= new Date();
-  System.out.println(sdf.format(curdate));
-
-
+  
 Collections 
 - iterable interface present in java.lang package not in java.util package 
 
     Set(no duplicates) ::  Queue   :: List(inseration order)     ::   Map(key value pair)
 
                       add()                                               put()
-    HashSet                           ArrayList                       HashMap  
-    TreeSet                           Linked List                     TreeMap
+    HashSet                           ArrayList                       HashMap, WeakHashMap  
+    LinkedHashSet                     Linked List                     LinkedHashMap
+    TreeSet                                                           TreeMap
                                       Vector                          Hashtable
 
-
+ Iterate through collection   :  foreach, Iterator , Enumerator (both in java.util)
+ Iterate through map          :  entrySet, keySet  > get the keys as as set and use foreach, Iterator 
+ 
+ Enumeration enum =  v.elements();
+ while(enum.hasMoreElements()){
+            element=enum.nextElement();
+        }
+ Iterator iter=v.iterator();
+ while(iter.hasNext()){
+            element=iter.next();
+        }
+        
+ Enumeration 
+  - hasMoreElement()
+  - nextElement()
+ Iterator
+  - hasNext()
+  - next()
+  - remove()
+  
+  
+ 
+ 
+  import java.util.HashSet
   import java.util.Hashtable;
   import java.util.Iterator;
   import java.util.Map;
