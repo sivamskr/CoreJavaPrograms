@@ -95,17 +95,7 @@ Collections
                                       Vector                          Hashtable
 
  Iterate through collection   :  foreach, Iterator , Enumerator (both in java.util)
- Iterate through map          :  entrySet, keySet  > get the keys as as set and use foreach, Iterator 
  
- Enumeration enum =  v.elements();
- while(enum.hasMoreElements()){
-            element=enum.nextElement();
-        }
- Iterator iter=v.iterator();
- while(iter.hasNext()){
-            element=iter.next();
-        }
-        
  Enumeration 
   - hasMoreElement()
   - nextElement()
@@ -114,28 +104,34 @@ Collections
   - next()
   - remove()
   
-  
+ Enumeration enum =  v.elements();
+ while(enum.hasMoreElements()){
+            element=enum.nextElement();
+ }
  
+ Iterator iter = v.iterator();
+ while(iter.hasNext()){
+            element=iter.next();
+ }
+        
+        
+        
+ Iterate through map          :  entrySet, keySet  > get the keys as as set and use foreach, Iterator 
  
-  import java.util.HashSet
-  import java.util.Hashtable;
-  import java.util.Iterator;
-  import java.util.Map;
-  import java.util.Map.Entry;
-  import java.util.Set;
-  
-  Iterator<Entry<Integer, String>> i= stockSet.iterator();
-  System.out.println("Iterating over Hashtable in Java");
-  
-  //Iterator begins
-  while(i.hasNext()){
+ for (String key : map.keySet()) {
+    System.out.println(key + ":" + map.get(key));
+ }
+
+ for (Entry<String, Integer> entry : map.entrySet()) {
+    System.out.println(entry);
+ }
+ 
+ Set<Entry<Integer, String>> eset = map.entrySet();
+ Iterator<Entry<String, Integer>> i= eset.iterator();
+ while(i.hasNext()){
     Map.Entry<Integer,String> m=i.next();
-    int key = m.getKey();
-    String value=m.getValue();
-    System.out.println("Key :"+key+"  value :"+value);
+    System.out.println("Key :"+ m.getKey() +"  value :"+ m.getValue());
   }
-
-
 
 ArrayList and HashSet 
 - index based  use get(index) and remove(index)
@@ -156,12 +152,44 @@ To use any object as key in HashMap , it needs to implement equals() and hashCod
 
 Threads  : 
 
+class MyThread implements Runnable
+  public void run()
+  {
+main()
+{
+   MyThread mt = new MyThread();
+   Thread t = new Thread(mt);
+   t.start();
+}
+
+class MyThread extends Thread
+  public void run()
+  {
+
+main()
+{
+  MyThread mt = new  MyThread();
+  mt.start();
+}
+
+Can we Start a thread twice ?
+No, You get IllegalThreadStateException.
+
+Joining threads : one thread needs to know when another thread is ending
+   t1.start();
+   try{
+       t1.join();		//Waiting for t1 to finish
+    }catch(InterruptedException ie){}
+   t2.start();
+
+
+Synchronize :
 
 
 
 Serialization : 
 
-> Difference between Serializable and Externalizable in Java Serialization
+> Difference between Serializable and Externalizable? 
   In case of Serializable, default serialization process is used. while in case of Externalizable custom Serialization process is used   which is implemented using readExternel() and writeExternal() 
 
 
