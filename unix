@@ -129,6 +129,8 @@ Regular expressions:
 ----------------------
 grep unix filename
 
+Back Slash "\" is used to escape the next symbol,turning off the special meaning 
+
 
 
 Permissions [r(4)w(2)x(1)]:
@@ -138,6 +140,12 @@ rwx  -  rwx  - rwx
 
 > Umask : default permission of the file 002  : Changing this will change the permission of all files at once
 > chmod 
+
+
+
+
+
+
 
 
           :::::::::::::::::::::::::
@@ -154,6 +162,87 @@ Different shells
 
 chsh -l  : to see all the available shells
 chsh -s  : to change the shell
+
+Subshell
+
+./test.sh
+../test.sh
+
+#! hashbang
+Shell Varibales
+> user defined
+> system   : positional
+             envrionmental
+             built-in
+             
+ $*  parameters to script as word 
+ $@  separate parameters
+ $#  no of parameters
+ 
+ $0  name of initialised process
+ $?  value of last run process
+ 
+ $1  first value
+ $2  second value
+ $3  third value
+ $4  fourth value
+ $5  fifth value
+ 
+ 
+ '   ' : strong
+ "   " : weak
+ `   ` : command
+ \     : skips functionality
+ 
+ Command substitution
+ ---------------------
+ $() instead of ` `
+ 
+ 
+ epression
+ --------
+ expr $a + $b
+ 
+ 
+ 
+ Loops
+ ------
+ 
+ for variable [ in list_of_items ]
+ do
+    statement 1
+    statement 2
+    statement 3
+    ...
+    statement n
+ done
+ 
+ 
+ 
+ 
+ while
+ do
+    statement 1
+    statement 2
+    statement 3
+    ...
+    statement n
+ done
+ 
+ 
+ 
+ case word in
+  pattern1)
+     Statement(s) to be executed if pattern1 matches
+     ;;
+  pattern2)
+     Statement(s) to be executed if pattern2 matches
+     ;;
+  pattern3)
+     Statement(s) to be executed if pattern3 matches
+     ;;
+ esac
+  
 
 
 
