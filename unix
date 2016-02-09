@@ -1,0 +1,171 @@
+
+
+user  --   shell  -- kernal  -- Hardware
+
+root is the base directory
+
+> home : it has all the user specific information
+> bin  : executables
+> dev  : device drivers
+> etc  : supervisory directory ; password, terminal info
+> tmp  : temporary files
+> lib  : all the libraries
+> usr  : usr1, usr
+
+
+unix has multiple file systems
+i-node number : physical address of the file
+
+Volume structure in unix
+boot block  super block   inode block   data block
+
+Commands:
+> cal  :  calender
+> date :  current date
+> man  :  help
+
+creating a file 
+cat > file1  overwriting              
+cat >> file  append
+
+[ Ctrl + d ] to disrupt the input
+[ Ctrl + c ] to exit the input
+[ Ctrl + z ] to suspend the input
+
+> fg to bring the process to foreground
+
+Read the file
+cat  file 1  
+
+> which date        : shows the full path of (shell) commands
+> whereis date      : locate the binary, source, and manual page files for a command
+> uname             : to know what kind of machine
+> alias c = clear   : create aliases
+> pwd               : print working directory
+> who
+> whoami
+> ls 
+
+creating directory
+> mkdir 
+> rmdir
+> rm -ri    [ r- recursive delte  i - interactive ]
+
+rmdir removes empty directories, not files, and not directories unless they are empty.
+rm will remove files and/or directories, use the -R or -r flag for directories.
+
+> cd ..    : parent folder
+> cd -     : previous folder
+> cd /     : root folder
+> cd ~     : home folder
+
+
+ vi editor 
+--------------
+> Esc  :
+> i    : insert mode
+> :q   :
+> :!q  :
+
+
+cp file1 file2... filelocation
+mv file1 file2... filelocation   [ Also to rename]
+touch file                       [ create empty file]
+
+
+Hardlink and softlink
+-----------------------
+> ln    f1  f_h
+> ln -s f1  f_s
+
+
+Wildcards
+----------
+*   : any no of charecters
+?   : only one charecter
+[]  : in between
+
+
+Redirection:
+-------------
+cat file1 1 > outputfile
+cat file1 2 > errorfile
+
+
+sort <  file1  > file2(this file is created; if it exists it is overwritten)
+
+
+Sequential Operator:
+--------------------
+&& if first success
+|| if first fails
+;  both 
+|  : output on the left is given as input to the one on right
+
+
+wordcount
+----------
+
+wc  file
+-l :lines
+-w : words
+-m : bytes
+
+Replace
+----------
+
+tr " x "  " y"
+
+> cmp
+> comm
+> diff
+> cut
+> uniq   -c : count   -d : duplicates
+> head -5 file 
+> tail -5 file
+
+
+Regular expressions:
+----------------------
+grep unix filename
+
+
+
+Permissions [r(4)w(2)x(1)]:
+------------------
+Owner- Group - Others
+rwx  -  rwx  - rwx
+
+> Umask : default permission of the file 002  : Changing this will change the permission of all files at once
+> chmod 
+
+
+          :::::::::::::::::::::::::
+   :::::::::: SHELL SCRIPTING :::::::::::::::
+          :::::::::::::::::::::::::
+
+Different shells
+> bourne shell
+> bourne again shell
+> c shell
+> korn shell
+> tc shell
+> public domain korn shell
+
+chsh -l  : to see all the available shells
+chsh -s  : to change the shell
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
