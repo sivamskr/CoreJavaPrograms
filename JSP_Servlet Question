@@ -1,3 +1,39 @@
 
 Java Server Pages
 
+
+Explain web.xml
+
+<servlet>
+    <load-on-startup>1</load-on-startup>               
+</servlet>
+
+#If the value is 0 or greater, it indicates an order for servlets to be loaded, servlets with higher numbers get loaded after servlets with lower numbers.
+
+1. What is initialization order of servlet ? What are lifecycle method and who calls them?
+2. How Servlet and JSP are related to each other ?
+3. What is Servlet Container, What are responsibilities of Servlet Container?
+4. What is difference between ServletContext and ServletConfig?
+5. How to control initialization of Servlet? How will you ensure pre initialization of Servlet?
+6. What is difference between GenericServlet and HttpServlet?
+7. What is difference between doGET() and doPOST() method?
+8. Who calls doGET() and doPOST() method ?
+9. Who creates object of HttpServletRequest and HttpServletResponse?
+10. How do you make a Servlet thread safe ?
+11. What is difference between Servlet and Filter?
+12. What is lifecycle of filter?
+13. How do you make your application to run using SSL?
+14. How do you ensure that a particular servlet can only be accessed after authetincation?
+15. How to implement authentication and authorization in Servlet application?
+16. What is advantage of Servlet over CGI?
+
+
+
+How do you define application wide error page in JSP?
+
+You can define two kinds of error pages in Java web application, 
+>  one is using tag <error-page> in web.xml 
+>  other is by using error page JSP which uses isErrorpage to declare that this jsp page can be used as error page.
+Other JSP uses that page by using attribute errorpage="error.jsp". Whenever you get an unhandled exception in JSP, request will be routed to error page.
+[http://javarevisited.blogspot.sg/2012/01/error-page-in-java-web-application.html]
+
