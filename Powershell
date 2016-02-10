@@ -1,0 +1,66 @@
+::::::::::::::::::::::::::::::
+::::Powershell in Nutshell::::
+::::::::::::::::::::::::::::::
+
+	get-help
+	get-help get-childitem (gci)
+	#commenting
+
+
+	$var =       or    new-variable  var –value 10
+	write-host –foregroundcolor green  “ “
+	read-host
+
+Variables
+	clear-variable x
+	set-variable  -name x –value 20
+	get-variable(gv)          -valueonly
+	remove-variable(rv) 
+
+       Alias
+	set-alias  <aliasname>   <actualname>
+	get-alias
+	remove-item alias:<aliasname>
+
+       Arrays
+	$var=@(10,20,30)    # access as $var[1]
+	$var.count
+	Foreach ($var in $array ) {write-host $var}
+String
+	$str = “string”
+	$str1.compareto($str2)
+	$str.startswith($str)
+	$str.endswith($str)
+	$str.toupper
+	$str.tolower
+	$str.contains($str)
+	$str.replace($str,$str)
+	$str.substring(3)
+	$str.tochararray()
+	[string]::compare("aa","AA",$true)
+Date
+	get-date
+	get-date  -displayhint date
+	get-date  -displayhint time
+	$a = get-date 5/1/2016
+	$arr | foreach-object {write-host $_}
+	$arr | where {$_ -ge <val> }
+Formatting
+	get-process | get-member | out-host –Paging
+	| format-wide
+	| format-wide   -property id
+	| format-list
+	| format-table
+Functions
+	Function global : <function-name> (<param>)
+{
+   # also param($a=10,$b=10)
+}
+       Execution Policies
+	Restricted     allsigned    remotesigned    unrestricted        bypass    undefined
+	set-executionpolicy       remotesigned
+	get-executionpolicy      -list
+Scripts
+	block of code  ( .ps1 extension)
+	
+
