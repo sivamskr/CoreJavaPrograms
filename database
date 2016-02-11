@@ -1,0 +1,27 @@
+
+Client                                Database
+Oracle SQL Developer                  Oracle
+
+
+
+
+In MySQL, physically, a schema is synonymous with a database. You can substitute the keyword SCHEMA instead of DATABASE in MySQL SQL syntax, for example using CREATE SCHEMA instead of CREATE DATABASE.
+
+Some other database products draw a distinction. For example, in the Oracle Database product, a schema represents only a part of a database: the tables and other objects owned by a single user
+
+
+create schema advpy
+
+
+>>>> Switching to a Different Schema(Oracle) <<< 
+The following statement sets the schema of the current session to the schema name specified in the statement.
+ALTER SESSION SET CURRENT_SCHEMA = <schema name>
+
+
+CREATE TABLE `advpy`.`New Table` (
+  `username` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  `password` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`username`)
+)
+ENGINE = InnoDB;
+
