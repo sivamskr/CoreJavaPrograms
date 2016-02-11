@@ -1,0 +1,68 @@
+
+::::::::::::::::::::::::::
+::::Basic Python::::::::::
+::::::::::::::::::::::::::
+
+
+
+
+
+
+
+::::::::::::::::::::::::::
+::::Advanced Python:::::::
+::::::::::::::::::::::::::
+
+cx_oracle
+cx_orcale.connect
+
+connection - string : username/password
+
+con.close()
+
+insert, update, delete from python to oracle
+
+con.commit()
+
+select query from python
+
+usage of procedure -> invoking procedure from python
+
+how to invoke procedure  with IN, OUT
+
+creating oracle variable in python, cx_Oracle.NUMBER
+
+cx_Oracle.STRING
+
+gevalue from oracle varibale  --> variablename.getvalue()
+
+
+>>>>>>> Requirement <<<<<<<<
+-------Welcome to Registration Portal--------------
+1. Create new user
+2. Change Password
+3. De-register
+
+Enter your choice : 1
+Enter name : x
+Enter password : y
+Re-enter password : y
+successfully registered / invalid  username or password
+
+Enter your choice : 2
+Enter name : x
+Enter password : y
+Enter new password : z
+Successfully changed Password/ invalid  username or password
+
+Enter your choice : 3
+Enter name : x
+Enter password : y
+Successfully de-registered/ invalid  username or password
+
+
+
+
+
+
+
