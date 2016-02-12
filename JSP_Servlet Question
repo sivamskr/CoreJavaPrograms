@@ -37,3 +37,26 @@ You can define two kinds of error pages in Java web application,
 Other JSP uses that page by using attribute errorpage="error.jsp". Whenever you get an unhandled exception in JSP, request will be routed to error page.
 [http://javarevisited.blogspot.sg/2012/01/error-page-in-java-web-application.html]
 
+
+HTTP is a request-reply protocol: the client (e.g. a web browser) sends a request, and the server (e.g. a web server) responds with a reply. Each request consists of a "request-line", a series of "header" lines and optionally a "body". A typical request-line looks like this: GET http://www.w3.org/pub/WWW/TheProject.html HTTP/1.1
+
+The three parts of this line are:
+•the HTTP request method (e.g. "GET"),
+•the URL (e.g. "http://www.w3.org/pub/WWW/TheProject.html"), and
+•the protocol version (e.g. "HTTP/1.1")
+
+In fact, the HTTP specification defines 8 standard HTTP request methods (GET, PUT, POST, DELETE, HEAD, OPTIONS, TRACE & CONNECT) each of which has a different meaning. (Other methods are defined by other specifications.)
+
+The doGet and doPost methods in the Servlet API are methods for processing HTTP GET and POST requests respectively. 
+ > In doGet Method the parameters are appended to the URL and sent along with header information In doPost, parameters are sent in       separate line in the body 
+
+> Maximum size of data that can be sent using doget is 240 bytes  :   There is no maximum size for data 
+> Parameters are not encrypted                                    :   Parameters are encrypted 
+> DoGet method generally is used to query or to get some          : Dopost is generally used to update or post info to the server
+  information from the server  
+> DoGet is faster if we set the response content length since the same connection is used. Thus increasing the performance DoPost is    slower compared to doGet since doPost does not write the content length 
+> DoGet should be idempotent. i.e. doget should be able to be repeated safely many times This method does not need to be idempotent.  > Operations requested through POST can have side effects for which the user can be held accountable, for example, updating stored      data or buying items online. 
+> DoGet should be safe without any side effects for which user is held responsible
+
+
+
