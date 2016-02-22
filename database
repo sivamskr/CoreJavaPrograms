@@ -25,3 +25,68 @@ CREATE TABLE `advpy`.`New Table` (
 )
 ENGINE = InnoDB;
 
+
+
+DDL is Data Definition Language statements. 
+> CREATE - to create objects in the database 
+> ALTER - alters the structure of the database 
+> DROP - delete objects from the database  
+> TRUNCATE - remove all records from a table, including all spaces allocated for the records are removed
+> COMMENT - add comments to the data dictionary 
+
+DML is Data Manipulation Language statements. 
+> SELECT - retrieve data from the a database 
+> INSERT - insert data into a table 
+> UPDATE - updates existing data within a table 
+> DELETE - deletes all records from a table, the space for the records remain 
+
+DCL is Data Control Language. DCL is used to create roles, grant and revoke permissions, 
+establish referential integrity etc.
+> GRANT - gives user's access privileges to database 
+> REVOKE - withdraw access privileges given with the GRANT command 
+
+TCL: TCL stands for Transactional Control Language. TCL is used to manage transactions within a database.
+> COMMIT
+> ROLLBACK 
+
+
+https://sites.google.com/site/interviewsharing/data-model/sql-server-interview-questions-answers-part-1
+
+
+Table Name : Employee
+Employee_id--First_name--Last_name--Salary--Joining_date--Department
+
+Table Name : Incentives
+Employee_ref_id--Incentive_date--Incentive_amount
+
+ Select * from employee 
+ Select first_name, Last_Name from employee 
+ Select first_name Employee Name from employee 
+ Select upper(FIRST_NAME) from EMPLOYEE 
+ Select lower(FIRST_NAME) from EMPLOYEE
+ select distinct DEPARTMENT from EMPLOYEE
+ substr(FIRST_NAME,0,3) from employee
+ (FIRST_NAME,'o') from employee where first_name='John'
+ select RTRIM(FIRST_NAME) from employee
+ select LTRIM(FIRST_NAME) from employee
+ select length(FIRST_NAME) from employee
+ select REPLACE(FIRST_NAME,'o','$') from employee
+ Select FIRST_NAME|| '_' ||LAST_NAME from EMPLOYEE
+ Select FIRST_NAME, to_char(joining_date,'YYYY') JoinYear , to_char(joining_date,'Mon'), to_char(joining_date,'dd') from EMPLOYEE
+ Select * from employee order by FIRST_NAME asc
+ Select * from employee order by FIRST_NAME desc
+ Select * from employee order by FIRST_NAME asc,SALARY desc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
