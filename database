@@ -31,7 +31,7 @@ DDL is Data Definition Language statements.
 > CREATE - to create objects in the database 
 > ALTER - alters the structure of the database 
 > DROP - delete objects from the database  
-> TRUNCATE - remove all records from a table, including all spaces allocated for the records are removed
+> TRUNCATE - remove all records from a table, including all spaces allocated for the records are removed(cant be rollback;no where clause)
 > COMMENT - add comments to the data dictionary 
 
 DML is Data Manipulation Language statements. 
@@ -76,6 +76,52 @@ Employee_ref_id--Incentive_date--Incentive_amount
  Select * from employee order by FIRST_NAME asc
  Select * from employee order by FIRST_NAME desc
  Select * from employee order by FIRST_NAME asc,SALARY desc
+ 
+ 
+ 
+ 
+ 
+ 
+ SET Operators
+ 
+T1: 1, 2, 2, 2, 3, 4, 4
+T2: 2, 3, 4, 4, 4, 5
+
+SELECT * FROM T1 MINUS SELECT * FROM T2?
+1
+
+SELECT * FROM T1 MINUS ALL SELECT * FROM T2?
+1, 2, 2
+
+SELECT * FROM T1 INTERSECT SELECT * FROM T2?
+2, 3, 4
+
+SELECT * FROM T1 INTERSECT ALL SELECT * FROM T2?
+2, 3, 4, 4
+As you can see ALL for EXCEPT/MINUS and INTERSECT retains cardinality and doesn't keep only unique records. 
+Let's hope Oracle someday will stop this gap and give us this functionality
+
+
+SELECT * FROM T1 UNION SELECT * FROM T2?
+
+SELECT * FROM T1 UNIONALL SELECT * FROM T2?
+
+
+
+
+::::   JOIN   ::::::
+
+Inner   equi
+        nonwqui
+
+Outer   left
+        right
+        full
+        
+Self join
+
+
+w3 schools -sql 
 
 
 
