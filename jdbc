@@ -1,0 +1,72 @@
+
+JDBC Driver
+JDBC Driver is a software component that enables java application to interact with the database.
+There are 4 types of JDBC drivers:  
+
+1.JDBC-ODBC bridge driver                       :  JDBC method calls into the ODBC function calls.
+2.Native-API driver (partially java driver)     :  uses the client-side libraries of the database   
+                                                   Vendor client library needs to be installed on client machine
+3.Network Protocol driver (fully java driver)   :  uses middleware (application server) that converts JDBC calls directly 
+4.Thin driver (fully java driver)               :  thin driver converts JDBC calls directly into the vendor-specific database protocol
+
+
+
+Register - Connect - Statement - Query - Resultset -close
+
+> Register the driver class
+  Class.forName("oracle.jdbc.driver.OracleDriver"); 
+  
+> Create the connection object
+  Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","password");  
+  
+> Create the Statement object
+  Statement stmt=con.createStatement();  
+
+> Execute the query
+  ResultSet rs=stmt.executeQuery("select * from emp");  
+ 
+  while(rs.next()){  
+  System.out.println(rs.getInt(1)+" "+rs.getString(2));  
+  } 
+  
+> Close the connection object
+  con.close(); 
+  
+  
+  
+  ResultSet  executeQuery(…)    retrieve data
+                                returns resultset
+  int executeUpdate(…)          update/modify 
+                                returns int
+  boolean  execute(…)           any kind 
+  
+  
+  
+  
+  ResultSet rs=stmt.executeQuery("select * from emp");  
+  
+  //getting the record of 3rd row  
+  rs.absolute(3);  
+  System.out.println(rs.getString(1)+" "+rs.getString(2)+" "+rs.getString(3));
+  
+  
+  Boolean return :
+  > next(): move the cursor to the one row next from the current 
+  > previous(): move the cursor to the one row previous from the current
+  > first(): move the cursor to the first row in result set object
+  > last(): move the cursor to the specified row number in the ResultSet object
+  > absolute(int row): move the cursor to the specified row number in the ResultSet 
+  > relative(int row): move the cursor to the relative row number in the ResultSet object, it may be positive or negative.
+  
+  Int Return:
+  > getInt(int columnIndex):    return the data of specified column index of the current row as int.
+  > getInt(String columnName):  return the data of specified column name of the current row as int
+  
+  String Return:
+  > getString(int columnIndex):  return the data of specified column index of the current row as String.
+  > getString(String columnName): return the data of specified column name of the current row as String
+  
+
+  
+  
+
